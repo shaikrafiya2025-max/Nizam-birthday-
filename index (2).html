@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nizam | Jaanu⁹</title>
+<style>
+:root{--gold:#d8b56a;--cream:#f7e9c7;--bg:#080808}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#292014 0%,#0b0a08 45%,#050505 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;text-align:center;overflow-x:hidden}
+main{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:34px 18px;position:relative}
+main:before,main:after{content:"✦";position:fixed;color:#b18b45;opacity:.35;font-size:20px;animation:twinkle 3s infinite alternate}
+main:before{top:14%;left:10%}main:after{right:12%;bottom:16%;animation-delay:1s}
+@keyframes twinkle{to{opacity:1;transform:scale(1.5)}}
+.card{width:min(680px,100%);padding:clamp(28px,7vw,60px) 24px;border:1px solid #9e7b3c;border-radius:22px;background:linear-gradient(145deg,rgba(30,25,17,.94),rgba(8,8,8,.97));box-shadow:0 0 55px #000,0 0 30px #b18b4518;position:relative}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;color:var(--gold);font:12px Arial,sans-serif}
+h1{font-size:clamp(42px,10vw,76px);font-weight:normal;line-height:1.05;margin:22px 0 8px;color:#f8e8bd;text-shadow:0 0 24px #d8b56a40}
+.name{font-size:clamp(22px,5vw,32px);color:var(--gold);font-style:italic}
+.rule{width:90px;height:1px;background:var(--gold);margin:28px auto}
+.intro{font-size:18px;line-height:1.8;color:#e9ddc4;max-width:500px;margin:0 auto}
+button{margin-top:30px;border:1px solid var(--gold);border-radius:30px;padding:14px 27px;background:linear-gradient(120deg,#b38a42,#f0d28b);color:#17110a;font-weight:bold;letter-spacing:1px;font-size:14px;cursor:pointer;box-shadow:0 5px 25px #d8b56a25}
+button:active{transform:scale(.98)}
+#letter{display:none;margin:28px auto 0;max-width:510px;padding:24px 18px;border-top:1px solid #80632f;color:#f5e9d0;font-size:18px;line-height:1.9;animation:fade .9s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.heart{font-size:25px;color:#d7ad60;margin:18px 0}
+footer{font:11px Arial,sans-serif;letter-spacing:2px;color:#9d865b;margin-top:30px}
+.spark{position:fixed;pointer-events:none;color:#d8b56a;animation:fall 4s linear forwards;z-index:5}
+@keyframes fall{from{transform:translateY(-10vh) rotate(0);opacity:1}to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+<div class="eyebrow">A little something, just for you</div>
+<h1>Happy Birthday</h1>
+<div class="name">Nizam · Jaanu⁹</div>
+<div class="rule"></div>
+<p class="intro">Some people make ordinary days feel special just by being in them. Today is all about celebrating you.</p>
+<div class="heart">✧ ♥ ✧</div>
+<button id="surprise" onclick="reveal()">Open your little surprise</button>
+<div id="letter">
+<p>Dear Jaanu⁹,</p>
+<p>On your special day, I wish you endless happiness, peaceful days, beautiful memories and all the success your heart dreams of.</p>
+<p>May life always give you reasons to smile. Keep shining, keep being yourself, and never forget how special you are.</p>
+<p>Happy Birthday, Nizam. May this year be as wonderful as you deserve. ❤️</p>
+<div class="heart">With love, always ♡</div>
+</div>
+<footer>MADE WITH LOVE · JUST FOR YOU</footer>
+</section>
+</main>
+<script>
+function reveal(){
+ const letter=document.getElementById('letter');
+ letter.style.display='block';
+ document.getElementById('surprise').textContent='A wish, just for you ♥';
+ document.getElementById('surprise').disabled=true;
+ for(let i=0;i<35;i++){
+  const s=document.createElement('span');s.className='spark';s.textContent=['✦','♥','✧'][Math.floor(Math.random()*3)];
+  s.style.left=Math.random()*100+'vw';s.style.top='-20px';s.style.fontSize=(12+Math.random()*18)+'px';
+  s.style.animationDelay=(Math.random()*1.5)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),6000);
+ }
+}
+</script>
+</body>
+</html>
